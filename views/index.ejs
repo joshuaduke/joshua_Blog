@@ -1,5 +1,25 @@
 <%- include ("partials/header.ejs") %>
 
-<h1>Hello Joshua</h1>
+<main id="container">
+  <div id="headings">
+    <h1>Blog Posts</h1>
+    <h3> <a href="">View All Tags</a> </h3>
+  </div>
+
+  <div class="clear"></div>
+
+  <% blogs.forEach(blog =>{ %>
+    <a href="/blogs/<%= blog._id %>" class="blog_container">
+
+      <h2><%= blog.title %></h2>
+      <p><%= blog.body.substring(0, 100) %> ...  </p>
+      <span><%= blog.created %> </span>
+      <p class="tags"><em> Tags used: <%= blog.tags %> </em></p>
+
+    </a>
+  <% }); %>
+  </main>
+
+
 
 <%- include ("partials/footer.ejs") %>

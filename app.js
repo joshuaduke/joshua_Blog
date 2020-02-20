@@ -28,6 +28,12 @@ let blogSchema = new mongoose.Schema({
 
 let Blog = mongoose.model("Blog", blogSchema);
 
+// Blog.create({
+//   title: "How to get started in Web Development in 2020",
+//   image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
+//   body: "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of de Finibus Bonorum et Malorum(The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, Lorem ipsum dolor sit amet.., comes from a line in section 1.10.32.",
+//   tags: ["webDev", "2020", "development", "general"]
+// });
 
 app.get("/", (req, res)=>{
   res.redirect("/blogs");
@@ -36,7 +42,25 @@ app.get("/", (req, res)=>{
 //INDEX ROUTE
 
 app.get("/blogs", (req, res)=>{
-  res.render("index");
+  Blog.find({}, (err, blogs)=>{
+    if(err){
+      console.log("Index route ERR");
+    } else {
+      res.render("index", {blogs: blogs})
+    }
+  });
+});
+
+//SHOW ROUTE
+app.get("/blogs/:id", (req, res)=>{
+  Blog.find(req.params.id, (err, foundPost)=>{
+    if(err){
+      console.log("Show route Error");
+      res.redirect("/blogs");
+    } else {
+      res.render("/post", {post : foundPost});
+    }
+  });
 });
 
 app.listen("3000", process.env.PORT, ()=>{
