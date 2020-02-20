@@ -58,7 +58,7 @@ app.get("/blogs/:id", (req, res)=>{
       console.log("Show route Error");
       res.redirect("/blogs");
     } else {
-      res.render("/post", {post : foundPost});
+      res.render("/show", {post : foundPost});
     }
   });
 });
