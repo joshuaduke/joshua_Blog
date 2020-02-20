@@ -53,12 +53,12 @@ app.get("/blogs", (req, res)=>{
 
 //SHOW ROUTE
 app.get("/blogs/:id", (req, res)=>{
-  Blog.find(req.params.id, (err, foundPost)=>{
+  Blog.findById(req.params.id, (err, foundPost)=>{
     if(err){
       console.log("Show route Error");
       res.redirect("/blogs");
     } else {
-      res.render("/show", {post : foundPost});
+      res.render("show", {post : foundPost});
     }
   });
 });
