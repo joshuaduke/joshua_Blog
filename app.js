@@ -30,7 +30,13 @@ let Blog = mongoose.model("Blog", blogSchema);
 
 
 app.get("/", (req, res)=>{
-  res.send("This is the homepage");
+  res.redirect("/blogs");
+});
+
+//INDEX ROUTE
+
+app.get("/blogs", (req, res)=>{
+  res.render("index");
 });
 
 app.listen("3000", process.env.PORT, ()=>{
