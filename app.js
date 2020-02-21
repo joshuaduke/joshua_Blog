@@ -39,7 +39,7 @@ app.get("/", (req, res)=>{
   res.redirect("/blogs");
 });
 
-//INDEX ROUTE
+//INDEX ROUTE blogs
 
 app.get("/blogs", (req, res)=>{
   Blog.find({}, (err, blogs)=>{
@@ -51,7 +51,9 @@ app.get("/blogs", (req, res)=>{
   });
 });
 
-//SHOW ROUTE
+//INDEX ROUTE tags
+
+//SHOW ROUTE blog posts
 app.get("/blogs/:id", (req, res)=>{
   Blog.findById(req.params.id, (err, foundPost)=>{
     if(err){
@@ -62,6 +64,9 @@ app.get("/blogs/:id", (req, res)=>{
     }
   });
 });
+
+//SHOW ROUTE tags
+
 
 app.listen("3000", process.env.PORT, ()=>{
   console.log("Server 3000 running...");
