@@ -14,11 +14,14 @@ a {
   clear: both;
 }
 
+h1 {
+  font-family: "Roboto";
+}
+
 nav {
   background-color: #e4e4e4;
   width: 100%;
   height: 50px;
-  padding: 30px;
 }
 
 nav ul {
@@ -36,33 +39,33 @@ nav ul:nth-of-type(2) {
   float: right;
 }
 
-#container {
+.container {
   width: 768px;
   margin: 0 auto;
   padding-top: 50px;
 }
 
-#container #headings {
+.container #headings {
   margin-bottom: 50px;
 }
 
-#container h2, #container h3 {
+.container #headings h2, .container #headings h3 {
   float: left;
-  font-family: sans-serif;
+  font-family: "Roboto";
 }
 
-#container h3 {
+.container #headings h3 {
   float: right;
 }
 
-#container h3 a {
+.container #headings h3 a {
   padding: 10px 5px;
   border: 1px solid #000;
   font-size: 0.7em;
   background-color: #e4e4e4;
 }
 
-#container .blog_container {
+.container .blog_container {
   display: block;
   -webkit-box-shadow: 1px 1px 1px #666;
           box-shadow: 1px 1px 1px #666;
@@ -71,13 +74,23 @@ nav ul:nth-of-type(2) {
   color: #000;
 }
 
-#container .blog_container h2 {
-  font-family: "Helvetica";
+.container .blog_container h2 {
+  font-family: "Roboto";
   color: #555;
 }
 
-#container .blog_container .tags {
+.container .blog_container .tags {
   color: #777;
+}
+
+label {
+  text-transform: uppercase;
+  font-family: "Roboto";
+}
+
+input {
+  display: inline;
+  font-family: "Montserrat";
 }
 
 h1 {

@@ -53,6 +53,12 @@ app.get("/blogs", (req, res)=>{
 
 //INDEX ROUTE tags
 
+//NEW ROUTE
+
+app.get("/blogs/new", (req,res)=>{
+   res.render("new");
+});
+
 //SHOW ROUTE blog posts
 app.get("/blogs/:id", (req, res)=>{
   Blog.findById(req.params.id, (err, foundPost)=>{
@@ -66,6 +72,9 @@ app.get("/blogs/:id", (req, res)=>{
 });
 
 //SHOW ROUTE tags
+
+
+//EDIT ROUTE
 
 
 app.listen("3000", process.env.PORT, ()=>{

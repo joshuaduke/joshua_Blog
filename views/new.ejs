@@ -1,0 +1,27 @@
+<%- include ("partials/header.ejs") %>
+
+
+<h1>Add new blog post</h1>
+
+<div class="container" id="form_new">
+  <form action="/blogs" method="POST">
+    <div>
+      <label>Title:</label>
+      <input type="text">
+    </div>
+
+    <div>
+      <label for="">Image:</label>
+      <input type="text">
+    </div>
+
+    <div>
+      <label>Post content</label>
+      <textarea cols="30" rows="10"></textarea>
+    </div>
+
+  </form>
+</div>
+
+
+<%- include ("partials/footer.ejs") %>
