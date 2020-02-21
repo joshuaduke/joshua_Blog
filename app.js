@@ -56,7 +56,25 @@ app.get("/blogs", (req, res)=>{
 //NEW ROUTE
 
 app.get("/blogs/new", (req,res)=>{
-   res.render("new");
+  res.render("new");
+});
+
+//CREATE ROUTE
+
+app.post("/blogs", (req, res)=>{
+  //create blog
+  console.log(req.body);
+
+  Blog.create(req.body.blog, (err, newPost)=>{
+    if(err){
+      console.log("Create Route Error");
+      res.render("new");
+    } else {
+      res.redirect("/blogs");
+    }
+  });
+
+  //redirect
 });
 
 //SHOW ROUTE blog posts

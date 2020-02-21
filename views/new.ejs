@@ -7,18 +7,22 @@
   <form action="/blogs" method="POST">
     <div>
       <label>Title:</label>
-      <input type="text">
+      <input type="text" name="blog[title]" placeholder="Web Development" required>
     </div>
 
     <div>
       <label for="">Image:</label>
-      <input type="text">
+      <input type="text" name="blog[image]" placeholder="image">
     </div>
 
     <div>
       <label>Post content</label>
-      <textarea cols="30" rows="10"></textarea>
+      <textarea name="blog[body]" placeholder="insert content here" required></textarea>
     </div>
+    <div>
+      
+    </div>
+    <input type="submit">
 
   </form>
 </div>

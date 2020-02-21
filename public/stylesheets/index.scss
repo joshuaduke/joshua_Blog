@@ -93,6 +93,16 @@ label{
   font-family:$header;
 }
 
+#form_new{
+  div:nth-of-type(3) label{
+    display:block;
+  }
+
+  textarea{
+    width:100%;
+  }
+}
+
 input{
   display: inline;
   font-family: $content;
