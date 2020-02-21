@@ -90,6 +90,15 @@ app.get("/blogs/:id", (req, res)=>{
 });
 
 //SHOW ROUTE tags
+app.get("/tags", (req, res)=>{
+  Blog.find({}, (err, blogs)=>{
+    if(err){
+      console.log("SHOW TAGS route ERR");
+    } else {
+      res.render("tags", {blogs: blogs})
+    }
+  });
+});
 
 
 //EDIT ROUTE

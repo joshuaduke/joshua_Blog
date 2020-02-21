@@ -1,0 +1,43 @@
+<%- include ("partials/header.ejs") %>
+
+<main class="container">
+
+<h1>Tags </h1>
+<div>
+
+  <%  for(let i = 0; i < blogs.length; i++){  %>
+    <%  for(let j = 0; j < blogs[i]["tags"].length; i++){ %>
+        
+        
+
+        <% blogs[i]["tags"].forEach(blog =>{ %>
+            <% console.log(blog) %>
+            <a class="tags" href=""> <%= blog %>, </a>
+        <% }) %>
+
+    <%  }  %>
+      
+<% } %>
+</div>
+
+
+
+</main>
+
+
+
+<%- include ("partials/footer.ejs") %>
+
+<!-- 
+  {
+    tags: [],
+    _id: 5e4ff03ce463bb087fa43135,
+    title: 'My new husky',
+    image: 'https://images.unsplash.com/photo-1547407139-3c921a66005c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80',
+    body: 'husky time',
+    created: 2020-02-21T14:59:08.576Z,
+    __v: 0
+  }
+]
+
+-->
