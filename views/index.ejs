@@ -13,7 +13,7 @@
 
       <h2><%= blog.title %></h2>
       <p><%= blog.body.substring(0, 100) %> ...  </p>
-      <span><%= blog.created %> </span>
+      <span><%= blog.created.toDateString() %> </span>
       <p class="tags"><em> Tags used: <%= blog.tags %> </em></p>
 
     </a>
